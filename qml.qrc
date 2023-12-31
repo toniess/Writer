@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Singletons/Dimensions.qml</file>
+        <file>assets/images/StartPage/background-1.png</file>
+        <file>assets/images/StartPage/background-2.png</file>
+        <file>qml/StartPage/StartPage.qml</file>
+        <file>qml/controls/BlurBoxBase.qml</file>
+        <file>assets/images/StartPage/logo.svg</file>
+    </qresource>
+</RCC>
