@@ -1,0 +1,96 @@
+name: WASM_master
+
+on:
+  push:
+    branches:
+      - master
+      
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+
+    - name: Install Qt (Host)
+      uses: jurplel/install-qt-action@v3
+      with:
+        aqtversion: '==3.1.*'
+        py7zrversion: '>=0.20.2'
+        version: '6.6.0'
+        host: 'linux'
+        target: 'desktop'
+        arch: 'gcc_64'
+        cache: 'true'
+        cache-key-prefix: 'install-qt-host-6.6.0'
+        modules: 'qt5compat qtshadertools'
+
+
+    - name: Install Qt (Emscripten)
+      uses: jurplel/install-qt-action@v3
+      with:
+        aqtversion: '==3.1.*'
+        py7zrversion: '>=0.20.2'
+        version: '6.6.0'
+        host: 'linux'
+        target: 'desktop'
+        arch: 'wasm_singlethread'
+        modules: 'qt5compat qtshadertools'
+        cache: 'true'
+        cache-key-prefix: 'install-qt-emscripten-6.6.0'
+
+       
+    - name: Setup emsdk
+      uses: mymindstorm/setup-emsdk@v13
+      with:
+        version: 3.1.37
+        actions-cache-folder: 'emsdk-cache'
+
+
+    - name: Build project
+      run: |
+        mkdir build 
+        cd build
+        qmake $(pwd)/../Writer.pro -spec wasm-emscripten CONFIG+=qml_debug
+        make qmake_all
+        make -f ./Makefile qmake_all
+        make -j $(nproc)
+
+    - name: After Build
+      run: |
+        mv build/Writer.html build/index.html
+        find build -type f ! \( -name 'Writer.wasm' -o -name 'Writer.js' -o -name 'Writer.worker.js' -o -name 'qtloader.js' -o -name 'index.html' -o -name 'qtlogo.svg' \) -delete
+
+
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v3
+    - name: Build with Jekyll
+      uses: actions/jekyll-build-pages@v1
+      with:
+        source: "./build"
+        destination: ./_site
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
