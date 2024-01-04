@@ -61,7 +61,7 @@ jobs:
       run: |
         mkdir build 
         cd build
-        qmake $(pwd)/../Writer.pro -spec wasm-emscripten #CONFIG+=release
+        qmake $(pwd)/../Writer.pro -spec wasm-emscripten CONFIG+=debug CONFIG+=qml_debug
         make qmake_all
         make -f ./Makefile qmake_all
         make -j $(nproc)
