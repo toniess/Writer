@@ -3,7 +3,8 @@ import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 import Dimenstions 1.0
-import "../controls"
+
+import Components 1.0
 
 
 Flickable {
@@ -26,13 +27,14 @@ Flickable {
     } // image1
 
 
-    BlurBoxBase {
+    ImageBlurBox{
         x: Dimensions.x(167)
         y: Dimensions.y(43)
         width: Dimensions.x(592)
         height: Dimensions.y(982)
         radius: Dimensions.x(80)
-        sourceImage: image1
+        parentImageItem: image1
+        topImageSource: "qrc:/assets/images/StartPage/logo.svg"
     }
 
 

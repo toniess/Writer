@@ -10,9 +10,11 @@ int main(int argc, char *argv[])
 #endif
     QGuiApplication app(argc, argv);
 
-    qmlRegisterSingletonType(QUrl("qrc:/Singletons/Dimensions.qml"), "Dimenstions", 1, 0, "Dimensions");
+    qmlRegisterSingletonType(QUrl("qrc:/Modules/Singletons/Dimensions.qml"), "Dimenstions", 1, 0, "Dimensions");
+    qmlRegisterSingletonType(QUrl("qrc:/Modules/Singletons/Appearance.qml"), "Appearance", 1, 0, "Appearance");
 
     QQmlApplicationEngine engine;
+    engine.addImportPath("qrc:/Modules/");
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
         &app, [url](QObject *obj, const QUrl &objUrl) {

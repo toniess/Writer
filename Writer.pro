@@ -1,4 +1,4 @@
-QT += quick core5compat opengl
+QT += quick core5compat
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -9,11 +9,15 @@ SOURCES += \
 
 RESOURCES += qml.qrc
 
-CONFIG += wasm_emscripten
+CONFIG += c++17 wasm_emscripten
+
+contains(CONFIG, release) {
+    QMAKE_CXXFLAGS += -oz -flto
+    QMAKE_LFLAGS += -flto
+}
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =
-
+QML_IMPORT_PATH = $${PWD}/Modules
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH =
 
