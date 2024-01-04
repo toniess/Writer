@@ -61,7 +61,7 @@ jobs:
       run: |
         mkdir build 
         cd build
-        qmake $(pwd)/../Writer.pro -spec wasm-emscripten CONFIG+=release
+        qmake $(pwd)/../Writer.pro -spec wasm-emscripten #CONFIG+=release
         make qmake_all
         make -f ./Makefile qmake_all
         make -j $(nproc)
@@ -71,7 +71,7 @@ jobs:
         mv build/Writer.html build/index.html
         find build -type f ! \( -name 'Writer.wasm' -o -name 'Writer.js' -o -name 'Writer.worker.js' -o -name 'qtloader.js' -o -name 'index.html' -o -name 'qtlogo.svg' \) -delete
         sed -i 's/\.wasm/\.wasm.gz/g' build/qtloader.js
-        gzip build/Writer.wasm
+        gzip -9 build/Writer.wasm
 
     - name: Setup Pages
       id: pages
