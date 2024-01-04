@@ -13,10 +13,10 @@ Item {
 
     property real radius: 0
     property real blurRadius: 40
-    property var sourceImage: null
+    property var parentImageItem: null
 
     Component.onCompleted: {
-        if (root.parent == sourceImage) {
+        if (root.parent == parentImageItem) {
             console.error("BlurBoxBase is inside of Source Image")
             Qt.quit()
         }
@@ -26,7 +26,7 @@ Item {
         id: shaderSource
         width: root.width
         height: root.height
-        sourceItem: root.sourceImage
+        sourceItem: root.parentImageItem
         recursive: false
         sourceRect: Qt.rect(root.x, root.y, root.width, root.height)
     }
