@@ -61,10 +61,11 @@ jobs:
       run: |
         mkdir build 
         cd build
-        qmake $(pwd)/../Writer.pro -spec wasm-emscripten CONFIG+=release -sASSERTIONS
+        qmake $(pwd)/../Writer.pro -spec wasm-emscripten CONFIG+=release QMAKE_CXXFLAGS += -sASSERTIONS=1 QMAKE_CFLAGS += -sASSERTIONS=1
         make qmake_all
         make -f ./Makefile qmake_all
         make -j $(nproc)
+
 
     - name: After Build
       run: |
@@ -72,6 +73,7 @@ jobs:
         find build -type f ! \( -name 'Writer.wasm' -o -name 'Writer.js' -o -name 'Writer.worker.js' -o -name 'qtloader.js' -o -name 'index.html' -o -name 'qtlogo.svg' \) -delete
         sed -i 's/Writer\.wasm/Writer.wasm.gz/g' build/Writer.js
         gzip build/Writer.wasm
+
 
     - name: Setup Pages
       id: pages
@@ -81,6 +83,11 @@ jobs:
       with:
         source: "./build"
         destination: ./_site
+    - name: Fix permissions
+      run: |
+        chmod -v -R +rX "_site/" | while read line; do
+          echo "::warning title=Invalid file permissions automatically fixed::$line"
+        done
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
 
