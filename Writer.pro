@@ -12,8 +12,9 @@ RESOURCES += qml.qrc
 CONFIG += c++17 wasm_emscripten
 
 contains(CONFIG, release) {
-    QMAKE_CXXFLAGS += -oz -flto
-    QMAKE_LFLAGS += -flto
+    CONFIG += assert
+    QMAKE_CXXFLAGS += -oz -flto -sASSERTIONS=1
+    QMAKE_LFLAGS += -flto -sASSERTIONS=1
 }
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
