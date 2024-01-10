@@ -16,19 +16,19 @@ QtObject {
 
 
     property FontLoaderBase unboundedLight : FontLoaderBase {
-        source: "qrc:/Modules/Unbounded/Unbounded-Light.ttf"
+        webSource: "Unbounded/Unbounded-Light.ttf"
     }
 
     property FontLoaderBase unboundedRegular : FontLoaderBase {
-        source: "qrc:/Modules/Unbounded/Unbounded-Regular.ttf"
+        webSource: "Unbounded/Unbounded-Regular.ttf"
     }
 
     property FontLoaderBase unboundedMedium : FontLoaderBase {
-        source: "qrc:/Modules/Unbounded/Unbounded-Medium.ttf"
+        webSource: "Unbounded/Unbounded-Medium.ttf"
     }
 
     property FontLoaderBase unboundedSemiBold : FontLoaderBase {
-        source: "qrc:/Modules/Unbounded/Unbounded-SemiBold.ttf"
+        webSource: "Unbounded/Unbounded-SemiBold.ttf"
     }
 
 }

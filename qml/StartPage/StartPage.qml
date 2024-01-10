@@ -23,7 +23,7 @@ Flickable {
         width:  Dimensions.availableWidth
         fillMode: Image.PreserveAspectCrop
         height: Dimensions.availableHeight
-        source: "qrc:/assets/images/StartPage/background-1.png"
+        source: "https://raw.githubusercontent.com/toniess/Writer/master/assets/images/StartPage/background-1.png"
     } // image1
 
 
@@ -34,7 +34,7 @@ Flickable {
         height: Dimensions.y(982)
         radius: Dimensions.x(80)
         parentImageItem: image1
-        topImageSource: "qrc:/assets/images/StartPage/logo.svg"
+        topImageSource: "https://raw.githubusercontent.com/toniess/Writer/master/assets/images/StartPage/logo.svg"
     }
 
 
@@ -43,7 +43,6 @@ Flickable {
         y: image1.height
         width: image1.width
         fillMode: Image.PreserveAspectFit
-        source: "qrc:/assets/images/StartPage/background-2.png"
-
+        source: "https://raw.githubusercontent.com/toniess/Writer/master/assets/images/StartPage/background-2.png"
     } // image2
 }

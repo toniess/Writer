@@ -1,10 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>assets/images/StartPage/background-1.png</file>
-        <file>assets/images/StartPage/background-2.png</file>
         <file>qml/StartPage/StartPage.qml</file>
-        <file>assets/images/StartPage/logo.svg</file>
         <file>Modules/Components/ImageBlurBox.qml</file>
         <file>Modules/Components/qmldir</file>
         <file>Modules/ComponentsBase/BlurBoxBase.qml</file>
@@ -12,14 +9,6 @@
         <file>Modules/Singletons/Dimensions.qml</file>
         <file>Modules/Singletons/Appearance.qml</file>
         <file>Modules/Unbounded/qmldir</file>
-        <file>Modules/Unbounded/Unbounded-Black.ttf</file>
-        <file>Modules/Unbounded/Unbounded-Bold.ttf</file>
-        <file>Modules/Unbounded/Unbounded-ExtraBold.ttf</file>
-        <file>Modules/Unbounded/Unbounded-ExtraLight.ttf</file>
-        <file>Modules/Unbounded/Unbounded-Light.ttf</file>
-        <file>Modules/Unbounded/Unbounded-Medium.ttf</file>
-        <file>Modules/Unbounded/Unbounded-Regular.ttf</file>
-        <file>Modules/Unbounded/Unbounded-SemiBold.ttf</file>
         <file>Modules/Unbounded/Unbounded.qml</file>
         <file>Modules/Unbounded/FontLoaderBase.qml</file>
         <file>Modules/ComponentsBase/HoleTextButtonBase.qml</file>
