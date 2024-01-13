@@ -33,7 +33,7 @@ jobs:
         arch: 'gcc_64'
         cache: 'true'
         cache-key-prefix: 'install-qt-host-6.6.0'
-        modules: 'qt5compat qtshadertools'
+        modules: 'qt5compat qtshadertools qtimageformats'
 
 
     - name: Install Qt (Emscripten)
@@ -45,7 +45,7 @@ jobs:
         host: 'linux'
         target: 'desktop'
         arch: 'wasm_singlethread'
-        modules: 'qt5compat qtshadertools'
+        modules: 'qt5compat qtshadertools qtimageformats'
         cache: 'true'
         cache-key-prefix: 'install-qt-emscripten-6.6.0'
 
