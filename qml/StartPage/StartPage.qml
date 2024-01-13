@@ -13,17 +13,20 @@ Flickable {
     width: Dimensions.availableWidth
     height: Dimensions.availableHeight
 
+    ScrollBar.horizontal: ScrollBar {}
+    ScrollBar.vertical: ScrollBar {}
+
     boundsBehavior: Flickable.StopAtBounds
     boundsMovement: Flickable.StopAtBounds
     contentHeight: image1.height + image2.height
 
 
-    Image {
+    WebImage {
         id: image1
         width:  Dimensions.availableWidth
         fillMode: Image.PreserveAspectCrop
         height: Dimensions.availableHeight
-        source: "https://raw.githubusercontent.com/toniess/Writer/master/assets/images/StartPage/background-1.png"
+        webSource: "StartPage/background-1.webp"
     } // image1
 
 
@@ -34,15 +37,15 @@ Flickable {
         height: Dimensions.y(982)
         radius: Dimensions.x(80)
         parentImageItem: image1
-        topImageSource: "https://raw.githubusercontent.com/toniess/Writer/master/assets/images/StartPage/logo.svg"
+        topImageSource: "StartPage/logo.svg"
     }
 
 
-    Image {
+    WebImage {
         id: image2
         y: image1.height
         width: image1.width
         fillMode: Image.PreserveAspectFit
-        source: "https://raw.githubusercontent.com/toniess/Writer/master/assets/images/StartPage/background-2.png"
+        webSource: "StartPage/background-2.webp"
     } // image2
 }

@@ -10,7 +10,8 @@
         <file>Modules/Singletons/Appearance.qml</file>
         <file>Modules/Unbounded/qmldir</file>
         <file>Modules/Unbounded/Unbounded.qml</file>
-        <file>Modules/Unbounded/FontLoaderBase.qml</file>
+        <file>Modules/Unbounded/WebFontLoader.qml</file>
         <file>Modules/ComponentsBase/HoleTextButtonBase.qml</file>
+        <file>Modules/Components/WebImage.qml</file>
     </qresource>
 </RCC>

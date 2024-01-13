@@ -15,20 +15,20 @@ QtObject {
     property font semibold55: Qt.font({  family: unboundedSemiBold.name, weight: Font.DemiBold, pixelSize: Dimensions.xy(55)  })
 
 
-    property FontLoaderBase unboundedLight : FontLoaderBase {
-        webSource: "Unbounded/Unbounded-Light.ttf"
+    property WebFontLoader unboundedLight : WebFontLoader {
+        webSource: "Unbounded/Unbounded-Light.woff"
     }
 
-    property FontLoaderBase unboundedRegular : FontLoaderBase {
-        webSource: "Unbounded/Unbounded-Regular.ttf"
+    property WebFontLoader unboundedRegular : WebFontLoader {
+        webSource: "Unbounded/Unbounded-Regular.woff"
     }
 
-    property FontLoaderBase unboundedMedium : FontLoaderBase {
-        webSource: "Unbounded/Unbounded-Medium.ttf"
+    property WebFontLoader unboundedMedium : WebFontLoader {
+        webSource: "Unbounded/Unbounded-Medium.woff"
     }
 
-    property FontLoaderBase unboundedSemiBold : FontLoaderBase {
-        webSource: "Unbounded/Unbounded-SemiBold.ttf"
+    property WebFontLoader unboundedSemiBold : WebFontLoader {
+        webSource: "Unbounded/Unbounded-SemiBold.woff"
     }
 
 }

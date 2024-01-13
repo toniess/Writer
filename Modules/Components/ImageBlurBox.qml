@@ -10,19 +10,21 @@ import ComponentsBase 1.0
 BlurBoxBase {
     id: root
 
-    property alias topImageSource: topImage.source
+    property alias topImageSource: topImage.webSource
 
     ColumnLayout {
         x: Dimensions.x(65)
         width: parent.width - 2 * x
         height: parent.height
 
-        Image {
+        WebImage {
             id: topImage
             Layout.topMargin: Dimensions.y(50)
             Layout.alignment: Qt.AlignHCenter
             Layout.fillWidth: true
             Layout.preferredHeight: Dimensions.y(120)
+            sourceSize.width: width
+            sourceSize.height: height
             fillMode: Image.PreserveAspectFit
         }
 

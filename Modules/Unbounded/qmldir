@@ -1,4 +1,4 @@
 module Unbounded
 
 Unbounded 1.0 Unbounded.qml
-FontLoaderBase 1.0 FontLoaderBase.qml
+WebFontLoader 1.0 WebFontLoader.qml
