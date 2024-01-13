@@ -12,22 +12,22 @@ Window {
     visible: true
 
     Component.onCompleted: {
-       openStartPage()
+        openStartPage()
     }
 
     function openStartPage() {
-       mainLoader.sourceComponent = startPageComponent
+        mainLoader.sourceComponent = startPageComponent
     }
 
     Loader {
-       id: mainLoader
-       width: Dimensions.availableWidth
-       height: Dimensions.availableHeight
+        id: mainLoader
+        width: Dimensions.availableWidth
+        height: Dimensions.availableHeight
     }
 
     Component {
-       id: startPageComponent
-       StartPage { }
+        id: startPageComponent
+        StartPage { }
     }
 
 } // mainWindow

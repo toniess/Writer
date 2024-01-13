@@ -3,8 +3,10 @@ import QtQuick.Window 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 import Dimenstions 1.0
+import Appearance 1.0
 
 import Components 1.0
+import Pages.StartPage 1.0
 
 
 Flickable {
@@ -27,10 +29,11 @@ Flickable {
         fillMode: Image.PreserveAspectCrop
         height: Dimensions.availableHeight
         webSource: "StartPage/background-1.webp"
+
     } // image1
 
 
-    ImageBlurBox{
+    SwipeBlurBox{
         x: Dimensions.x(167)
         y: Dimensions.y(43)
         width: Dimensions.x(592)

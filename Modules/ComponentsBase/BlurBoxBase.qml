@@ -12,6 +12,8 @@ Item {
     property real blurRadius: 40
     property var parentImageItem: null
 
+    visible: parentImageItem.status === Image.Ready
+
     Component.onCompleted: {
         if (root.parent == parentImageItem) {
             console.error("BlurBoxBase is inside of Source Image")
@@ -48,6 +50,7 @@ Item {
         layer.enabled: true
         layer.effect: OpacityMask {
             maskSource: mask
+            cached: true
         }
     }
 
@@ -62,6 +65,7 @@ Item {
         layer.enabled: true
         layer.effect: OpacityMask {
             maskSource: mask
+            cached: true
         }
     }
 }

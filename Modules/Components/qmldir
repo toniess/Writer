@@ -1,4 +1,5 @@
 module Components
 
-ImageBlurBox 1.0 ImageBlurBox.qml
-WebImage 1.0 WebImage.qml
+SwipeBlurBox   1.0 SwipeBlurBox.qml
+WebImage       1.0 WebImage.qml
+WebImageButton 1.0 WebImageButton.qml

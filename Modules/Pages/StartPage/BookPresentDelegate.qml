@@ -7,35 +7,33 @@ import Appearance 1.0
 
 import ComponentsBase 1.0
 
-BlurBoxBase {
+
+Item {
     id: root
 
-    property alias topImageSource: topImage.webSource
+
+    property alias title: title.text
+    property alias subtitle: subtitle.text
+    property alias description: description.text
+    property alias buttonText: button.text
+
+    signal clicked()
+
 
     ColumnLayout {
-        x: Dimensions.x(65)
-        width: parent.width - 2 * x
-        height: parent.height
-
-        WebImage {
-            id: topImage
-            Layout.topMargin: Dimensions.y(50)
-            Layout.alignment: Qt.AlignHCenter
-            Layout.fillWidth: true
-            Layout.preferredHeight: Dimensions.y(120)
-            sourceSize.width: width
-            sourceSize.height: height
-            fillMode: Image.PreserveAspectFit
-        }
+        anchors.fill: parent
+        anchors.leftMargin: Dimensions.x(65)
+        anchors.rightMargin: Dimensions.x(65)
 
         Text {
-            Layout.topMargin: Dimensions.y(75)
+            id: title
             text: "ЯКУТСКИЙ\nПЛЕННИК"
             font: Appearance.fontUnbounded.semibold55
             color: "#FFFFFF"
         }
 
         Text {
+            id: subtitle
             Layout.topMargin: Dimensions.y(37)
             text: "ДЕБЮТНЫЙ\nСБОРНИК\nРАССКАЗОВ"
             font: Appearance.fontUnbounded.regular30
@@ -43,6 +41,7 @@ BlurBoxBase {
         }
 
         Text {
+            id: description
             Layout.topMargin: Dimensions.y(22)
             text: "ПРОДАНО БОЛЕЕ 3 МЛН КОПИЙ ПО ВСЕМУ МИРУ. ПОГРУЗИТЕСЬ В УДИВИТЕЛЬНЫЙ МИР РАССКАЗОВ И ИСТОРИЙ"
             font: Appearance.fontUnbounded.regular24
@@ -53,13 +52,15 @@ BlurBoxBase {
         }
 
         HoleTextButtonBase {
+            id: button
             Layout.topMargin: Dimensions.y(49)
             Layout.preferredHeight: Dimensions.y(46)
-            Layout.preferredWidth: Dimensions.y(183)
+            Layout.preferredWidth: Dimensions.x(183)
             radius: height / 2
             text: "читать"
+
+            onClicked: root.clicked()
         }
 
-        Item { Layout.fillHeight: true }
     }
 }

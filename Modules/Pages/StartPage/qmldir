@@ -1,0 +1,3 @@
+module Pages.StartPage
+
+SwipeBlurBox 1.0 SwipeBlurBox.qml

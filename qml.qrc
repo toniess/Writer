@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qml/StartPage/StartPage.qml</file>
-        <file>Modules/Components/ImageBlurBox.qml</file>
         <file>Modules/Components/qmldir</file>
         <file>Modules/ComponentsBase/BlurBoxBase.qml</file>
         <file>Modules/ComponentsBase/qmldir</file>
@@ -13,5 +12,10 @@
         <file>Modules/Unbounded/WebFontLoader.qml</file>
         <file>Modules/ComponentsBase/HoleTextButtonBase.qml</file>
         <file>Modules/Components/WebImage.qml</file>
+        <file>Modules/Components/WebImageButton.qml</file>
+        <file>Modules/Pages/StartPage/qmldir</file>
+        <file>Modules/Pages/StartPage/BookPresentDelegate.qml</file>
+        <file>Modules/Pages/StartPage/SwipeBlurBox.qml</file>
+        <file>Modules/Pages/StartPage/SwipePageIndicator.qml</file>
     </qresource>
 </RCC>

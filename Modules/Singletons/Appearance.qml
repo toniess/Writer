@@ -10,5 +10,4 @@ QtObject {
 
     property color softWhite: Qt.rgba(235, 235, 235, 255)
 
-
 }

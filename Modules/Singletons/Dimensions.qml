@@ -6,10 +6,18 @@ import QtQuick.Window 2.15
 
 QtObject {
 
-    property real availableWidth: Screen.width
-    property real availableHeight: Screen.height
-    property real yRatio: Screen.height / 1080
-    property real xRatio: Screen.width / 1920
+    property bool horizontal: Screen.width > Screen.height
+
+    property real availableWidth: !horizontal
+                                  ? Math.max(Screen.height / 2, Screen.width)
+                                  : Screen.width
+
+    property real availableHeight: horizontal
+                                   ? Math.max(Screen.width / 2, Screen.height)
+                                   : Screen.height
+
+    property real yRatio: availableHeight / 1080
+    property real xRatio: availableWidth / 1920
 
     function x(x) {
         return x * xRatio
