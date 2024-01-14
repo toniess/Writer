@@ -2,3 +2,4 @@ module ComponentsBase
 
 BlurBoxBase        1.0 BlurBoxBase.qml
 HoleTextButtonBase 1.0 HoleTextButtonBase.qml
+TextBase           1.0 TextBase.qml

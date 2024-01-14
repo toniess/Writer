@@ -33,12 +33,9 @@ Flickable {
     } // image1
 
 
-    SwipeBlurBox{
+    BooksSwipeBlurBox{
         x: Dimensions.x(167)
         y: Dimensions.y(43)
-        width: Dimensions.x(592)
-        height: Dimensions.y(982)
-        radius: Dimensions.x(80)
         parentImageItem: image1
         topImageSource: "StartPage/logo.svg"
     }
@@ -51,4 +48,26 @@ Flickable {
         fillMode: Image.PreserveAspectFit
         webSource: "StartPage/background-2.webp"
     } // image2
+
+
+    BiographyBlurBox {
+        x: parent.width - width - Dimensions.x(152)
+        y: image2.y + Dimensions.y(43)
+        parentImageItem: image2
+    }
+
+
+    StartReadBlurBox {
+        x: parent.width - width - Dimensions.x(152)
+        y: image2.y + Dimensions.y(829)
+        parentImageItem: image2
+    }
+
+
+    ContactBlurBox {
+        x: parent.width - width - Dimensions.x(152)
+        y: image2.y + Dimensions.y(1275)
+        parentImageItem: image2
+    }
+
 }

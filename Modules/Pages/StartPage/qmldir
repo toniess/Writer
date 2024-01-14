@@ -1,3 +1,6 @@
 module Pages.StartPage
 
-SwipeBlurBox 1.0 SwipeBlurBox.qml
+BooksSwipeBlurBox 1.0 BooksSwipeBlurBox.qml
+BiographyBlurBox  1.0 BiographyBlurBox.qml
+StartReadBlurBox  1.0 StartReadBlurBox.qml
+ContactBlurBox    1.0 ContactBlurBox.qml

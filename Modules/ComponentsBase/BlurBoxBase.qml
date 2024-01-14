@@ -11,6 +11,7 @@ Item {
     property real radius: 0
     property real blurRadius: 40
     property var parentImageItem: null
+    clip: true
 
     visible: parentImageItem.status === Image.Ready
 
@@ -27,7 +28,10 @@ Item {
         height: root.height
         sourceItem: root.parentImageItem
         recursive: false
-        sourceRect: Qt.rect(root.x, root.y, root.width, root.height)
+        sourceRect: Qt.rect(root.x - parentImageItem.x,
+                            root.y - parentImageItem.y,
+                            root.width,
+                            root.height)
     }
 
 

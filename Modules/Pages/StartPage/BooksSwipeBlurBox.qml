@@ -12,7 +12,11 @@ BlurBoxBase {
     id: root
 
     property alias topImageSource: topImage.webSource
+    signal clicked()
 
+    width: Dimensions.x(592)
+    height: Dimensions.y(982)
+    radius: Dimensions.x(80)
 
     ColumnLayout {
         anchors.fill: parent
@@ -33,16 +37,29 @@ BlurBoxBase {
             id: swipeView
             Layout.fillWidth: true
             Layout.topMargin: Dimensions.y(40)
-            Layout.preferredHeight: Dimensions.y(581)
+            Layout.preferredHeight: Dimensions.y(486)
             interactive: false
             clip: true
 
-            BookPresentDelegate {}
+            Repeater {
+                model: 3
 
-            BookPresentDelegate {}
+                delegate: BookPresentDelegate {}
+            }
 
-            BookPresentDelegate {}
         } // swipeView
+
+
+        HoleTextButtonBase {
+            id: button
+            Layout.topMargin: Dimensions.y(49)
+            Layout.leftMargin: Dimensions.x(65)
+            Layout.preferredHeight: Dimensions.y(46)
+            Layout.preferredWidth: Dimensions.x(183)
+            text: "читать"
+
+            onClicked: root.clicked()
+        }
 
 
         RowLayout {
@@ -80,5 +97,6 @@ BlurBoxBase {
 
         Item { Layout.fillHeight: true }
 
-    }
-}
+    } // ColumnLayout
+
+} // root

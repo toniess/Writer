@@ -13,8 +13,9 @@ Rectangle {
 
     signal clicked()
 
-    color: Appearance.softWhite
+    radius: height / 2
 
+    color: Appearance.softWhite
 
     scale: mouseArea.containsMouse ? 1.05 : 1
 
