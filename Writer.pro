@@ -11,11 +11,6 @@ RESOURCES += qml.qrc
 
 CONFIG += c++17 wasm_emscripten
 
-contains(CONFIG, release) {
-    QMAKE_CXXFLAGS += -oz -flto
-    QMAKE_LFLAGS += -flto
-}
-
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH = $${PWD}/Modules
 # Additional import path used to resolve QML modules just for Qt Quick Designer

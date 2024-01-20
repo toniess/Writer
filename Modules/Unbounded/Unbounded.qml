@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import Dimenstions 1.0
+import QtQuick
+import Dimensions
 
 
 // Шрифт Unbounded

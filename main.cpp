@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 #endif
     QGuiApplication app(argc, argv);
 
-    qmlRegisterSingletonType(QUrl("qrc:/Modules/Singletons/Dimensions.qml"), "Dimenstions", 1, 0, "Dimensions");
+    qmlRegisterSingletonType(QUrl("qrc:/Modules/Singletons/Dimensions.qml"), "Dimensions", 1, 0, "Dimensions");
     qmlRegisterSingletonType(QUrl("qrc:/Modules/Singletons/Appearance.qml"), "Appearance", 1, 0, "Appearance");
 
     QQmlApplicationEngine engine;

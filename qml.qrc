@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>qml/StartPage/StartPage.qml</file>
+        <file>qml/StartPage/DesktopStartPage.qml</file>
         <file>Modules/Components/qmldir</file>
         <file>Modules/ComponentsBase/BlurBoxBase.qml</file>
         <file>Modules/ComponentsBase/qmldir</file>
@@ -21,5 +21,7 @@
         <file>Modules/Pages/StartPage/StartReadBlurBox.qml</file>
         <file>Modules/ComponentsBase/TextBase.qml</file>
         <file>Modules/Pages/StartPage/ContactBlurBox.qml</file>
+        <file>Modules/ComponentsBase/BlurImageBase.qml</file>
+        <file>qml/StartPage/MobileStartPage.qml</file>
     </qresource>
 </RCC>

@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import Dimenstions 1.0
+import QtQuick
+import Dimensions
 import Qt5Compat.GraphicalEffects
 
 
@@ -49,7 +49,7 @@ Item {
         source: shaderSource
         radius: root.blurRadius
         cached: true
-        samples: 50
+        samples: radius * 2 + 1
 
         layer.enabled: true
         layer.effect: OpacityMask {
@@ -62,7 +62,7 @@ Item {
     ColorOverlay {
         anchors.fill: shaderSource
         source: shaderSource
-        color: "#13273B"
+        color: "#1A3547"
         opacity: 0.5
         cached: true
 

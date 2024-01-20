@@ -1,8 +1,7 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15
-import Dimenstions 1.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+import Dimensions
 import "qml/StartPage"
 
 Window {
@@ -16,8 +15,11 @@ Window {
     }
 
     function openStartPage() {
-        mainLoader.sourceComponent = startPageComponent
+        mainLoader.sourceComponent = Qt.binding(
+            () => Dimensions.isDesktop ? desktopStartPage : mobileStartPage
+        )
     }
+
 
     Loader {
         id: mainLoader
@@ -25,9 +27,15 @@ Window {
         height: Dimensions.availableHeight
     }
 
+
     Component {
-        id: startPageComponent
-        StartPage { }
+        id: desktopStartPage
+        DesktopStartPage { }
+    }
+
+    Component {
+        id: mobileStartPage
+        MobileStartPage { }
     }
 
 } // mainWindow

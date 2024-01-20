@@ -1,12 +1,11 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15
-import Dimenstions 1.0
-import Appearance 1.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+import Dimensions
+import Appearance
 
-import Components 1.0
-import Pages.StartPage 1.0
+import Components
+import Pages.StartPage
 
 
 Flickable {
@@ -44,9 +43,23 @@ Flickable {
     WebImage {
         id: image2
         y: image1.height
-        width: image1.width
-        fillMode: Image.PreserveAspectFit
+        width: Dimensions.availableWidth
+        height: contacts.y + contacts.height + Dimensions.y(60) - y
+        fillMode: Image.PreserveAspectCrop
         webSource: "StartPage/background-2.webp"
+
+
+        WebImage {
+            width: Dimensions.x(500)
+            height: Dimensions.y(100)
+            fillMode: Image.PreserveAspectFit
+            anchors.left: parent.left
+            anchors.bottom: parent.bottom
+            anchors.margins: Dimensions.xy(50)
+            webSource: "StartPage/logo.svg"
+            opacity: 0.8
+        }
+
     } // image2
 
 
@@ -65,6 +78,7 @@ Flickable {
 
 
     ContactBlurBox {
+        id: contacts
         x: parent.width - width - Dimensions.x(152)
         y: image2.y + Dimensions.y(1275)
         parentImageItem: image2

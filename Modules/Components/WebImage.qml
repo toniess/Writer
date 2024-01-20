@@ -1,4 +1,5 @@
-import QtQuick 2.15
+import QtQuick
+import Dimensions
 
 // Изображение с веба
 
@@ -7,13 +8,5 @@ Image {
     property string webSource: ""
 
     source: "https://raw.githubusercontent.com/toniess/Writer/master/assets/images/" + webSource
-
-    Component.onCompleted: {
-        let split = source.toString().split('.')
-        if (split[split.length-1] === "svg") {
-            sourceSize.height = height
-            sourceSize.width = width
-        }
-    }
 
 }

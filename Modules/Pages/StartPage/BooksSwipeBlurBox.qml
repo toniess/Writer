@@ -1,11 +1,11 @@
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15
-import Dimenstions 1.0
-import Appearance 1.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+import Dimensions
+import Appearance
 
-import Components 1.0
-import ComponentsBase 1.0
+import Components
+import ComponentsBase
 
 
 BlurBoxBase {
@@ -21,15 +21,13 @@ BlurBoxBase {
     ColumnLayout {
         anchors.fill: parent
 
-
         WebImage {
             id: topImage
             Layout.topMargin: Dimensions.y(50)
             Layout.alignment: Qt.AlignHCenter
-            Layout.fillWidth: true
+            Layout.preferredWidth: Dimensions.x(400)
             Layout.preferredHeight: Dimensions.y(120)
             fillMode: Image.PreserveAspectFit
-
         } //topImage
 
 
