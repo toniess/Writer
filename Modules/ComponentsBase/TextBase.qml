@@ -5,4 +5,5 @@ Text {
     color: "#FFFFFF"
 
     lineHeight: 1
+    horizontalAlignment: Text.AlignVCenter
 }

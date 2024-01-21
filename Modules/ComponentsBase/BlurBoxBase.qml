@@ -48,8 +48,8 @@ Item {
         anchors.fill: shaderSource
         source: shaderSource
         radius: root.blurRadius
-        cached: true
         samples: radius * 2 + 1
+        cached: true
 
         layer.enabled: true
         layer.effect: OpacityMask {

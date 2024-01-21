@@ -23,5 +23,8 @@
         <file>Modules/Pages/StartPage/ContactBlurBox.qml</file>
         <file>Modules/ComponentsBase/BlurImageBase.qml</file>
         <file>qml/StartPage/MobileStartPage.qml</file>
+        <file>Modules/Pages/StartPage/BooksSwipeItem.qml</file>
+        <file>Modules/Pages/StartPage/ShortBookPresentDelegate.qml</file>
+        <file>assets/images/loading.gif</file>
     </qresource>
 </RCC>

@@ -17,7 +17,7 @@ Rectangle {
 
     color: Appearance.softWhite
 
-    scale: mouseArea.containsMouse ? 1.05 : 1
+    scale: mouseArea.containsMouse && !mouseArea.containsPress ? 1.05 : 1
 
     Behavior on scale {
         NumberAnimation { easing.type: Easing.InOutQuad; duration: 200 }

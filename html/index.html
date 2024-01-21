@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="theme-color" content="#315F88">
+    <meta name="theme-color" content="#315F88" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#315F88" media="(prefers-color-scheme: dark)">
+
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0"/>
+
+    <title>Writer</title>
+    <style>
+
+      html, body { padding: 0; margin: auto; overflow: hidden; height: 100%; background-color: #315F88; display: flex; }
+      #screen { width: 100%; height: 100%; }
+      #qtspinner { margin: auto; }
+      #qtspinner img { width: auto; height: 10dvh; }
+    </style>
+  </head>
+  <body onload="init()">
+    <div id="qtspinner">
+      <img src="loading.gif"/>
+    </div>
+    <div id="screen"></div>
+
+    <script type='text/javascript'>
+        let qtLoader = undefined;
+        function init() {
+          var spinner = document.querySelector('#qtspinner');
+          var canvas = document.querySelector('#screen');
+          var body   = document.querySelector('html, body')
+
+          qtLoader = new QtLoader({
+              canvasElements : [canvas],
+              showLoader: function(loaderStatus) {
+                  spinner.style.display = 'block';
+                  canvas.style.display = 'none';
+              },
+              showError: function(errorText) {
+                  spinner.style.display = 'block';
+                  canvas.style.display = 'none';
+              },
+              showExit: function() {
+                  spinner.style.display = 'block';
+                  canvas.style.display = 'none';
+              },
+              showCanvas: function() {
+                  spinner.style.display = 'none';
+                  canvas.style.display = 'block';
+                  console.log(4)
+                  body.style.display = 'block'
+              },
+          });
+          qtLoader.loadEmscriptenModule("Writer");
+      }
+    </script>
+    <script type="text/javascript" src="qtloader.js"></script>
+  </body>
+</html>

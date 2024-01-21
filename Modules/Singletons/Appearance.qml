@@ -9,5 +9,5 @@ QtObject {
     property Unbounded fontUnbounded : Unbounded { }
 
     property color softWhite: Qt.rgba(235, 235, 235, 255)
-
+    property color theme: "#315f88"
 }

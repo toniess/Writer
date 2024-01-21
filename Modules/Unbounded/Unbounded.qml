@@ -8,9 +8,11 @@ QtObject {
     id: root
 
     property font regular24: Qt.font({  family: unboundedRegular.name, weight: Font.Normal, pixelSize: Dimensions.xy(24)  })
+    property font regular26: Qt.font({  family: unboundedRegular.name, weight: Font.Normal, pixelSize: Dimensions.xy(26)  })
     property font regular30: Qt.font({  family: unboundedRegular.name, weight: Font.Normal, pixelSize: Dimensions.xy(30)  })
 
     property font semibold30: Qt.font({  family: unboundedSemiBold.name, weight: Font.DemiBold, pixelSize: Dimensions.xy(30)  })
+    property font semibold45: Qt.font({  family: unboundedSemiBold.name, weight: Font.DemiBold, pixelSize: Dimensions.xy(45)  })
     property font semibold55: Qt.font({  family: unboundedSemiBold.name, weight: Font.DemiBold, pixelSize: Dimensions.xy(55)  })
 
 

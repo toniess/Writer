@@ -12,6 +12,7 @@ Item {
     property alias webSource: image.webSource
     property alias fillMode: image.fillMode
     property alias sourceClipRect: image.sourceClipRect
+    property alias horizontalAlignment: image.horizontalAlignment
 
     clip: true
 
@@ -20,6 +21,7 @@ Item {
         width: parent.width
         height: parent.height
         visible: false
+        cache: true
     }
 
 
@@ -27,8 +29,8 @@ Item {
         anchors.fill: image
         source: image
         radius: root.blurRadius
-        cached: true
         samples: radius * 2 + 1
+        cached: true
     }
 
 

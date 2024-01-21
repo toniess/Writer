@@ -36,7 +36,6 @@ Flickable {
         x: Dimensions.x(167)
         y: Dimensions.y(43)
         parentImageItem: image1
-        topImageSource: "StartPage/logo.svg"
     }
 
 

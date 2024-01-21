@@ -11,7 +11,6 @@ import ComponentsBase
 BlurBoxBase {
     id: root
 
-    property alias topImageSource: topImage.webSource
     signal clicked()
 
     width: Dimensions.x(592)
@@ -28,6 +27,7 @@ BlurBoxBase {
             Layout.preferredWidth: Dimensions.x(400)
             Layout.preferredHeight: Dimensions.y(120)
             fillMode: Image.PreserveAspectFit
+            webSource: "StartPage/logo.svg"
         } //topImage
 
 
