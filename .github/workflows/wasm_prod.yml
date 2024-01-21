@@ -69,10 +69,9 @@ jobs:
 
     - name: After Build
       run: |
-        mv build/Writer.html build/index.html
-        find build -type f ! \( -name 'Writer.wasm' -o -name 'Writer.js' -o -name 'Writer.worker.js' -o -name 'qtloader.js' -o -name 'index.html' -o -name 'qtlogo.svg' \) -delete
-        # sed -i 's/Writer\.wasm/Writer.wasm.gz/g' build/Writer.js
-        # gzip build/Writer.wasm
+        mv html/index.html build/index.html
+        mv html/loading.gif build/loading.gif
+        find build -type f ! \( -name 'Writer.wasm' -o -name 'Writer.js' -o -name 'Writer.worker.js' -o -name 'qtloader.js' -o -name 'index.html' -o -name 'loading.gif' \) -delete
 
 
     - name: Setup Pages
