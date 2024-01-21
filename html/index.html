@@ -7,12 +7,12 @@
     <meta name="theme-color" content="#315F88" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#315F88" media="(prefers-color-scheme: dark)">
 
+
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0"/>
 
     <title>Writer</title>
     <style>
-
-      html, body { padding: 0; margin: auto; overflow: hidden; height: 100%; background-color: #315F88; display: flex; }
+      html, body { padding: 0; margin: 0; overflow: hidden; height: 100%; width: 100%; background-color: #315F88; display: flex; }
       #screen { width: 100%; height: 100%; }
       #qtspinner { margin: auto; }
       #qtspinner img { width: auto; height: 10dvh; }
@@ -24,37 +24,39 @@
     </div>
     <div id="screen"></div>
 
-    <script type='text/javascript'>
-        let qtLoader = undefined;
-        function init() {
-          var spinner = document.querySelector('#qtspinner');
-          var canvas = document.querySelector('#screen');
-          var body   = document.querySelector('html, body')
+    <script type="text/javascript">
+        async function init()
+        {
+            const spinner = document.querySelector('#qtspinner');
+            const screen = document.querySelector('#screen');
+            var body   = document.querySelector('html, body')
 
-          qtLoader = new QtLoader({
-              canvasElements : [canvas],
-              showLoader: function(loaderStatus) {
-                  spinner.style.display = 'block';
-                  canvas.style.display = 'none';
-              },
-              showError: function(errorText) {
-                  spinner.style.display = 'block';
-                  canvas.style.display = 'none';
-              },
-              showExit: function() {
-                  spinner.style.display = 'block';
-                  canvas.style.display = 'none';
-              },
-              showCanvas: function() {
-                  spinner.style.display = 'none';
-                  canvas.style.display = 'block';
-                  console.log(4)
-                  body.style.display = 'block'
-              },
-          });
-          qtLoader.loadEmscriptenModule("Writer");
-      }
+            const showUi = (ui) => {
+                [spinner, screen].forEach(element => element.style.display = 'none');
+                if (screen === ui)
+                    screen.style.position = 'default';
+                ui.style.display = 'block';
+                body.style.display = 'block'
+            }
+
+            try {
+                showUi(spinner);
+
+                const instance = await qtLoad({
+                    qt: {
+                        onLoaded: () => showUi(screen),
+                        onExit: exitData => showUi(spinner),
+                        entryFunction: window.createQtAppInstance,
+                        containerElements: [screen],
+                    }
+                });
+            } catch (e) {
+                console.error(e);
+                console.error(e.stack);
+            }
+        }
     </script>
+    <script src="Writer.js"></script>
     <script type="text/javascript" src="qtloader.js"></script>
   </body>
 </html>
