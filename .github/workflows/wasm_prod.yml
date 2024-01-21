@@ -71,7 +71,7 @@ jobs:
       run: |
         mv html/index.html build/index.html
         mv html/loading.gif build/loading.gif
-        find build -type f ! \( -name 'Writer.wasm' -o -name 'Writer.js' -o -name 'Writer.worker.js' -o -name 'qtloader.js' -o -name 'index.html' -o -name 'loading.gif' -o -name 'Writer.html' \) -delete
+        find build -type f ! \( -name 'Writer.wasm' -o -name 'Writer.js' -o -name 'Writer.worker.js' -o -name 'qtloader.js' -o -name 'index.html' -o -name 'loading.gif' \) -delete
 
 
     - name: Setup Pages
