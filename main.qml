@@ -11,18 +11,22 @@ Window {
     height: Dimensions.availableHeight
     visible: true
 
+
     Rectangle {
         id: background
         anchors.fill: parent
+
+        color: Appearance.theme
 
         AnimatedImage {
             anchors.centerIn: parent
             width: height
             height: Dimensions.availableHeight / 10
             source: "qrc:/assets/images/loading.gif"
+            visible: !mainLoader.ready
         }
-        color: Appearance.theme
     }
+
 
     Component.onCompleted: {
         openStartPage()
@@ -39,6 +43,8 @@ Window {
         id: mainLoader
         width: Dimensions.availableWidth
         height: Dimensions.availableHeight
+        property bool ready: item.ready // должен быть определен у компонентов
+        visible: ready
     }
 
 

@@ -1,10 +1,13 @@
 import QtQuick
+import QtQuick.Controls
 import Dimensions
 import Appearance
 import Qt5Compat.GraphicalEffects
 
 
 // Кнопка с прозразным текстом
+
+//TODO add ripple
 
 Rectangle {
     id: root
@@ -17,12 +20,11 @@ Rectangle {
 
     color: Appearance.softWhite
 
-    scale: mouseArea.containsMouse && !mouseArea.containsPress ? 1.05 : 1
+    scale: !tap.pressed ? 1 : 0.95
 
     Behavior on scale {
-        NumberAnimation { easing.type: Easing.InOutQuad; duration: 200 }
+        NumberAnimation { easing.type: Easing.InOutQuad; duration: 100 }
     }
-
 
     layer.enabled: true
     layer.effect: OpacityMask {
@@ -40,13 +42,9 @@ Rectangle {
         visible: false
     }
 
-    MouseArea {
-        id: mouseArea
-
-        anchors.fill: parent
-        hoverEnabled: true
-
-        onClicked: root.clicked()
+    TapHandler {
+        id: tap
+        onTapped: root.clicked()
     }
 
-}
+} // root

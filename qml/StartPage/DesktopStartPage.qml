@@ -11,6 +11,10 @@ import Pages.StartPage
 Flickable {
     id: root
 
+    property bool ready: image1.status === Image.Ready &&
+                         image2.status === Image.Ready
+
+
     width: Dimensions.availableWidth
     height: Dimensions.availableHeight
 

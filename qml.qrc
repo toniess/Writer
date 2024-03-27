@@ -26,5 +26,8 @@
         <file>Modules/Pages/StartPage/BooksSwipeItem.qml</file>
         <file>Modules/Pages/StartPage/ShortBookPresentDelegate.qml</file>
         <file>assets/images/loading.gif</file>
+        <file>Modules/Pages/StartPage/BiographyItem.qml</file>
+        <file>Modules/Pages/StartPage/StartReadItem.qml</file>
+        <file>Modules/Pages/StartPage/ContactItem.qml</file>
     </qresource>
 </RCC>

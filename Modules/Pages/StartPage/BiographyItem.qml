@@ -8,40 +8,44 @@ import Components
 import ComponentsBase
 
 
-BlurBoxBase {
+Item {
     id: root
 
     signal clicked()
 
-    width: Dimensions.x(595)
-    height: Dimensions.y(735)
-    radius: Dimensions.x(80)
+    implicitHeight: column.implicitHeight
+    implicitWidth: Dimensions.availableWidth
 
     ColumnLayout {
-        anchors.fill: parent
-        anchors.leftMargin: Dimensions.x(57)
-        anchors.rightMargin: Dimensions.x(57)
+        id: column
+        x: Dimensions.x(57)
+        width: parent.width - x * 2
 
 
         TextBase {
             id: title
             Layout.topMargin: Dimensions.y(76)
+            Layout.alignment: Qt.AlignHCenter
             text: "ОБ АВТОРЕ"
             font: Appearance.fontUnbounded.semibold55
+            horizontalAlignment: Text.AlignHCenter
         }
 
 
         TextBase {
             id: subtitle
+            Layout.alignment: Qt.AlignHCenter
             Layout.topMargin: Dimensions.y(37)
             text: "ГЛУШКОВ ИГОРЬ МИХАЙЛОВИЧ"
             font: Appearance.fontUnbounded.regular30
+            horizontalAlignment: Text.AlignHCenter
             Layout.maximumWidth: parent.width
         }
 
 
         TextBase {
             id: description
+            Layout.alignment: Qt.AlignHCenter
             Layout.topMargin: Dimensions.y(22)
             lineHeight: 1.3
             text: "РОДИЛСЯ В <b>ОМСКЕ</b> В 1957<br>
@@ -51,6 +55,7 @@ BlurBoxBase {
                     <b>КМС</b> ПО ПЛАВАНИЮ<br>
                     РУКОВОДИЛ ПРОЕКТОМ <b>АЭРОПОРТ “ФЕДОРОВКА”</b>"
             font: Appearance.fontUnbounded.regular24
+            horizontalAlignment: Text.AlignHCenter
             Layout.maximumWidth: parent.width
             opacity: 0.6
         }
@@ -59,6 +64,7 @@ BlurBoxBase {
         HoleTextButtonBase {
             id: button
             Layout.topMargin: Dimensions.y(35)
+            Layout.alignment: Qt.AlignHCenter
             Layout.preferredHeight: Dimensions.y(46)
             Layout.preferredWidth: Dimensions.x(263)
             text: "подробнее"
@@ -67,7 +73,7 @@ BlurBoxBase {
         }
 
 
-        Item { Layout.fillHeight: true }
+        // Item { Layout.fillHeight: true }
 
     } // ColumnLayout
 

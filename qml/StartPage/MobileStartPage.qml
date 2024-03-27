@@ -12,6 +12,10 @@ import Pages.StartPage
 Flickable {
     id: root
 
+    property bool ready: image1.status === Image.Ready &&
+                         image2.status === Image.Ready
+
+
     width: Dimensions.availableWidth
     height: Dimensions.availableHeight
 
@@ -48,15 +52,19 @@ Flickable {
         webSource: "StartPage/background-2.webp"
     } // image2
 
-    // WebImage {
-    //     id: image2
-    //     y: image1.height
-    //     width: Dimensions.availableWidth
-    //     height: contacts.y + contacts.height + Dimensions.y(60) - y
-    //     fillMode: Image.PreserveAspectCrop
-    //     webSource: "StartPage/background-2.webp"
-    // } // image2
+
+    ColumnLayout {
+        y: image2.y
+        width: Dimensions.availableWidth
+        height: image2.height
+
+        BiographyItem { }
+
+        StartReadItem { }
+
+        ContactItem { }
+
+    }
 
 
-
-}
+} // root

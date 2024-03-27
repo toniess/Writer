@@ -13,6 +13,7 @@ Item {
     property alias fillMode: image.fillMode
     property alias sourceClipRect: image.sourceClipRect
     property alias horizontalAlignment: image.horizontalAlignment
+    property alias status: image.status
 
     clip: true
 
