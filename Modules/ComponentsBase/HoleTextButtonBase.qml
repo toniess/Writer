@@ -13,6 +13,7 @@ Rectangle {
     id: root
 
     property alias text: mask.text
+    implicitWidth: mask.implicitWidth + Dimensions.x(50)
 
     signal clicked()
 

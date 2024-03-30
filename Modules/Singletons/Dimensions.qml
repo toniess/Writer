@@ -1,10 +1,11 @@
 pragma Singleton
 import QtQuick 2.15
 import QtQuick.Window 2.15
+import QmlExtension 1.0
 
 // singleton Dimensions
 
-QtObject {
+QmlObject {
 
     property bool isDesktop: Screen.width > Screen.height
     property bool isMobile: !isDesktop

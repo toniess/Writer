@@ -4,14 +4,10 @@ module Pages.StartPage
 # ------------- desktop ----------------
 
 BooksSwipeBlurBox 1.0 BooksSwipeBlurBox.qml
-BiographyBlurBox  1.0 BiographyBlurBox.qml
-StartReadBlurBox  1.0 StartReadBlurBox.qml
-ContactBlurBox    1.0 ContactBlurBox.qml
+InfoBlurBox       1.0 InfoBlurBox.qml
 
 
 # ------------- mobile ----------------
 
 BooksSwipeItem    1.0 BooksSwipeItem.qml
-BiographyItem     1.0 BiographyItem.qml
-StartReadItem     1.0 StartReadItem.qml
-ContactItem       1.0 ContactItem.qml
+InfoBoxItem       1.0 InfoBoxItem.qml

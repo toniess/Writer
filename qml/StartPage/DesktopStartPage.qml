@@ -47,7 +47,7 @@ Flickable {
         id: image2
         y: image1.height
         width: Dimensions.availableWidth
-        height: contacts.y + contacts.height + Dimensions.y(60) - y
+        height: contacts.y + contacts.height + Dimensions.y(43) - y
         fillMode: Image.PreserveAspectCrop
         webSource: "StartPage/background-2.webp"
 
@@ -66,25 +66,39 @@ Flickable {
     } // image2
 
 
-    BiographyBlurBox {
+    InfoBlurBox {
+        id: biography
         x: parent.width - width - Dimensions.x(152)
         y: image2.y + Dimensions.y(43)
         parentImageItem: image2
+        titleItem.text:       mainModels.infoBoxes.biography.title
+        subtitleItem.text:    mainModels.infoBoxes.biography.subtitle
+        descriptionItem.text: mainModels.infoBoxes.biography.description
+        buttons:              mainModels.infoBoxes.biography.buttons
     }
 
 
-    StartReadBlurBox {
+    InfoBlurBox {
+        id: startRead
         x: parent.width - width - Dimensions.x(152)
-        y: image2.y + Dimensions.y(829)
+        y: biography.y + biography.height + Dimensions.y(43)
         parentImageItem: image2
+        titleItem.text:       mainModels.infoBoxes.startRead.title
+        subtitleItem.text:    mainModels.infoBoxes.startRead.subtitle
+        descriptionItem.text: mainModels.infoBoxes.startRead.description
+        buttons:              mainModels.infoBoxes.startRead.buttons
     }
 
 
-    ContactBlurBox {
+    InfoBlurBox {
         id: contacts
         x: parent.width - width - Dimensions.x(152)
-        y: image2.y + Dimensions.y(1275)
+        y: startRead.y + startRead.height + Dimensions.y(43)
         parentImageItem: image2
+        titleItem.text:       mainModels.infoBoxes.contacts.title
+        subtitleItem.text:    mainModels.infoBoxes.contacts.subtitle
+        descriptionItem.text: mainModels.infoBoxes.contacts.description
+        buttons:              mainModels.infoBoxes.contacts.buttons
     }
 
 }

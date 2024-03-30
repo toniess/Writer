@@ -14,20 +14,15 @@
         <file>Modules/Components/WebImage.qml</file>
         <file>Modules/Components/WebImageButton.qml</file>
         <file>Modules/Pages/StartPage/qmldir</file>
-        <file>Modules/Pages/StartPage/BookPresentDelegate.qml</file>
         <file>Modules/Pages/StartPage/BooksSwipeBlurBox.qml</file>
         <file>Modules/Pages/StartPage/SwipePageIndicator.qml</file>
-        <file>Modules/Pages/StartPage/BiographyBlurBox.qml</file>
-        <file>Modules/Pages/StartPage/StartReadBlurBox.qml</file>
+        <file>Modules/Pages/StartPage/InfoBlurBox.qml</file>
         <file>Modules/ComponentsBase/TextBase.qml</file>
-        <file>Modules/Pages/StartPage/ContactBlurBox.qml</file>
         <file>Modules/ComponentsBase/BlurImageBase.qml</file>
         <file>qml/StartPage/MobileStartPage.qml</file>
         <file>Modules/Pages/StartPage/BooksSwipeItem.qml</file>
-        <file>Modules/Pages/StartPage/ShortBookPresentDelegate.qml</file>
         <file>assets/images/loading.gif</file>
-        <file>Modules/Pages/StartPage/BiographyItem.qml</file>
-        <file>Modules/Pages/StartPage/StartReadItem.qml</file>
-        <file>Modules/Pages/StartPage/ContactItem.qml</file>
+        <file>Modules/Pages/StartPage/InfoBoxItem.qml</file>
+        <file>MainModels.qml</file>
     </qresource>
 </RCC>

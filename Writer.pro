@@ -9,6 +9,8 @@ SOURCES += \
 
 RESOURCES += qml.qrc
 
+include(QmlExtension/QmlExtension.pri)
+
 CONFIG += c++17 wasm_emscripten
 
 # Additional import path used to resolve QML modules in Qt Creator's code model

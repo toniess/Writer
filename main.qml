@@ -47,6 +47,9 @@ Window {
         visible: ready
     }
 
+    MainModels {
+        id: mainModels
+    }
 
     Component {
         id: desktopStartPage

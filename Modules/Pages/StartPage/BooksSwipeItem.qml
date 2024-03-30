@@ -29,7 +29,7 @@ Item {
 
         RowLayout {
             Layout.topMargin: Dimensions.y(200)
-            Layout.alignment: Qt.AlignCenter// | Qt.AlignTop
+            Layout.alignment: Qt.AlignCenter
             Layout.maximumHeight: Dimensions.y(200)
             Layout.fillWidth: true
 
@@ -61,9 +61,15 @@ Item {
                 clip: true
 
                 Repeater {
-                    model: 3
+                    model: mainModels.infoBoxes.booksModel
 
-                    delegate: ShortBookPresentDelegate {}
+                    delegate: InfoBoxItem {
+                        titleItem.font:     Appearance.fontUnbounded.semibold45
+                        subtitleItem.font:  Appearance.fontUnbounded.regular26
+                        titleItem.text:     model.title
+                        subtitleItem.text:  model.subtitle
+                        centered: true
+                    }
                 }
 
             } // swipeView

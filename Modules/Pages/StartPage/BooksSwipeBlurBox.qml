@@ -40,9 +40,14 @@ BlurBoxBase {
             clip: true
 
             Repeater {
-                model: 3
+                model: mainModels.infoBoxes.booksModel
 
-                delegate: BookPresentDelegate {}
+                delegate: InfoBoxItem {
+                    titleItem.font:     Appearance.fontUnbounded.semibold55
+                    titleItem.text:     model.title
+                    subtitleItem.text:  model.subtitle
+                    descriptionItem.text: model.description
+                }
             }
 
         } // swipeView

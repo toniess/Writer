@@ -24,7 +24,7 @@ Flickable {
 
     boundsBehavior: Flickable.StopAtBounds
     boundsMovement: Flickable.StopAtBounds
-    contentHeight: image1.height + image2.height
+    contentHeight: content.height
 
 
     BlurImageBase {
@@ -34,13 +34,6 @@ Flickable {
         height: Dimensions.availableHeight
         webSource: "StartPage/background-1.webp"
     } // image1
-
-
-    BooksSwipeItem {
-        width:  Dimensions.availableWidth
-        height: Dimensions.availableHeight
-    }
-
 
     BlurImageBase {
         id: image2
@@ -54,17 +47,69 @@ Flickable {
 
 
     ColumnLayout {
-        y: image2.y
+        id: content
         width: Dimensions.availableWidth
-        height: image2.height
+        height: image1.height + image2.height
 
-        BiographyItem { }
+        BooksSwipeItem {
+            Layout.preferredWidth:  Dimensions.availableWidth
+            Layout.preferredHeight: Dimensions.availableHeight
+        }
 
-        StartReadItem { }
 
-        ContactItem { }
+        Item { Layout.fillHeight: true }
 
-    }
+
+        InfoBoxItem {
+            titleItem.text:       mainModels.infoBoxes.biography.title
+            subtitleItem.text:    mainModels.infoBoxes.biography.subtitle
+            descriptionItem.text: mainModels.infoBoxes.biography.description
+            buttons:              mainModels.infoBoxes.biography.buttons
+            centered: true
+
+            onClicked: {
+
+            }
+        } // biography
+
+
+        Item { Layout.fillHeight: true }
+
+
+        InfoBoxItem {
+            titleItem.text:       mainModels.infoBoxes.startRead.title
+            subtitleItem.text:    mainModels.infoBoxes.startRead.subtitle
+            descriptionItem.text: mainModels.infoBoxes.startRead.description
+            buttons:              mainModels.infoBoxes.startRead.buttons
+            centered: true
+
+            onClicked: {
+
+            }
+        } // startRead
+
+
+        Item { Layout.fillHeight: true }
+
+
+        InfoBoxItem {
+            titleItem.text:       mainModels.infoBoxes.contacts.title
+            subtitleItem.text:    mainModels.infoBoxes.contacts.subtitle
+            descriptionItem.text: mainModels.infoBoxes.contacts.description
+            buttons:              mainModels.infoBoxes.contacts.buttons
+            centered: true
+            buttonWidth: Dimensions.x(133)
+
+            onClicked: {
+
+            }
+        } // contacts
+
+
+        Item { Layout.fillHeight: true }
+
+
+    } // columnLayout
 
 
 } // root

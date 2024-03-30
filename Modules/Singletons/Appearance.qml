@@ -1,10 +1,11 @@
 pragma Singleton
 import QtQuick 2.15
 import Unbounded 1.0
+import QmlExtension 1.0
 
 // singleton Appearance
 
-QtObject {
+QmlObject {
 
     property Unbounded fontUnbounded : Unbounded { }
 
