@@ -33,7 +33,7 @@ jobs:
         arch: 'gcc_64'
         cache: 'true'
         cache-key-prefix: 'install-qt-host-6.6.0'
-        modules: 'qt5compat qtshadertools qtimageformats'
+        modules: 'qt5compat qtshadertools'
 
 
     - name: Install Qt (Emscripten)
@@ -45,7 +45,7 @@ jobs:
         host: 'linux'
         target: 'desktop'
         arch: 'wasm_singlethread'
-        modules: 'qt5compat qtshadertools qtimageformats'
+        modules: 'qt5compat qtshadertools'
         cache: 'true'
         cache-key-prefix: 'install-qt-emscripten-6.6.0'
 
@@ -61,7 +61,7 @@ jobs:
       run: |
         mkdir build 
         cd build
-        qmake $(pwd)/../Writer.pro -spec wasm-emscripten CONFIG+=release -no-feature-cssparser -no-feature-datetimeedit -no-feature-datetimeparser -no-feature-dockwidget -no-feature-gestures -no-feature-mimetype	-no-feature-qml-network -no-feature-qml-list-model -no-feature-qml-table-model -no-feature-quick-canvas -no-feature-quick-path -no-feature-quick-pathview -no-feature-quick-treeview -no-feature-style-stylesheet -no-feature-tableview -no-feature-texthtmlparser -no-feature-textmarkdownreader -no-feature-textodfwriter 
+        qmake $(pwd)/../Writer.pro -spec wasm-emscripten CONFIG+=release
         make qmake_all
         make -f ./Makefile qmake_all
         make -j $(nproc)
