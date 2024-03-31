@@ -27,12 +27,12 @@ jobs:
       with:
         aqtversion: '==3.1.*'
         py7zrversion: '>=0.20.2'
-        version: '6.6.0'
+        version: '6.5.3'
         host: 'linux'
         target: 'desktop'
         arch: 'gcc_64'
         cache: 'true'
-        cache-key-prefix: 'install-qt-host-6.6.0'
+        cache-key-prefix: 'install-qt-host-6.5.3'
         modules: 'qt5compat qtshadertools'
 
 
@@ -41,20 +41,20 @@ jobs:
       with:
         aqtversion: '==3.1.*'
         py7zrversion: '>=0.20.2'
-        version: '6.6.0'
+        version: '6.5.3'
         host: 'linux'
         target: 'desktop'
         arch: 'wasm_singlethread'
         modules: 'qt5compat qtshadertools'
         cache: 'true'
-        cache-key-prefix: 'install-qt-emscripten-6.6.0'
+        cache-key-prefix: 'install-qt-emscripten-6.5.3'
 
        
     - name: Setup emsdk
       uses: mymindstorm/setup-emsdk@v13
       with:
-        version: 3.1.37
-        actions-cache-folder: 'emsdk-cache'
+        version: 3.1.25
+        actions-cache-folder: 'emsdk-3.1.25-cache'
 
 
     - name: Build project
