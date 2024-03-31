@@ -27,10 +27,12 @@ Item {
         } //topImage
 
 
+        Item { Layout.fillHeight: true }
+
+
         RowLayout {
-            Layout.topMargin: Dimensions.y(200)
             Layout.alignment: Qt.AlignCenter
-            Layout.maximumHeight: Dimensions.y(200)
+            Layout.maximumHeight: swipeView.height
             Layout.fillWidth: true
 
 

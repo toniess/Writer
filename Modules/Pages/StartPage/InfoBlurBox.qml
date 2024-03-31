@@ -70,22 +70,38 @@ BlurBoxBase {
         }
 
 
-        GridLayout {
+        Flow {
             Layout.topMargin: Dimensions.y(35)
             Layout.alignment: root.itemAlignment
-            Layout.maximumWidth: parent.width
-            rowSpacing: Dimensions.x(21)
-            columnSpacing: Dimensions.y(21)
+            spacing: Dimensions.x(21)
             visible: buttons.count > 0
+
+            Layout.preferredWidth: {
+                if (buttons.count === 0) return 0
+                if (buttons.count === 1) return children[0].width
+
+                let i = 0
+                let lineWidth = children[i].width
+                while (++i < buttons.count
+                       && lineWidth + spacing + children[i].width < parent.width  )
+                    lineWidth += children[i].width + spacing
+
+                if (i == buttons.count)
+                    lineWidth - spacing
+                return lineWidth
+            }
 
             Repeater {
                 id: buttons
 
                 delegate: HoleTextButtonBase {
                     height: Dimensions.y(46)
-                    width: root.buttonWidth === -1
-                           ? implicitWidth
-                           : root.buttonWidth
+
+                    Binding on implicitWidth{
+                        when: root.buttonWidth !== -1
+                        value: root.buttonWidth
+                    }
+
                     text: modelData
 
                     onClicked: root.clicked(text)
