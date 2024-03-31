@@ -61,7 +61,7 @@ jobs:
       run: |
         mkdir build 
         cd build
-        qmake $(pwd)/../Writer.pro -spec wasm-emscripten CONFIG+=release
+        qmake $(pwd)/../Writer.pro -spec wasm-emscripten CONFIG+=release -no-feature-cssparser -no-feature-datetimeedit -no-feature-datetimeparser -no-feature-dockwidget -no-feature-gestures -no-feature-mimetype	-no-feature-qml-network -no-feature-qml-list-model -no-feature-qml-table-model -no-feature-quick-canvas -no-feature-quick-path -no-feature-quick-pathview -no-feature-quick-treeview -no-feature-style-stylesheet -no-feature-tableview -no-feature-texthtmlparser -no-feature-textmarkdownreader -no-feature-textodfwriter 
         make qmake_all
         make -f ./Makefile qmake_all
         make -j $(nproc)
