@@ -33,7 +33,7 @@ jobs:
         arch: 'gcc_64'
         cache: 'true'
         cache-key-prefix: 'install-qt-host-6.5.3'
-        modules: 'qt5compat qtshadertools'
+        modules: 'qt5compat qtshadertools qtimageformats'
 
 
     - name: Install Qt (Emscripten)
@@ -45,9 +45,9 @@ jobs:
         host: 'linux'
         target: 'desktop'
         arch: 'wasm_singlethread'
-        modules: 'qt5compat qtshadertools'
         cache: 'true'
         cache-key-prefix: 'install-qt-emscripten-6.5.3'
+        modules: 'qt5compat qtshadertools qtimageformats'
 
        
     - name: Setup emsdk
@@ -69,8 +69,8 @@ jobs:
 
     - name: After Build
       run: |
-        #mv html/index.html build/index.html
-        #mv html/loading.gif build/loading.gif
+        mv html/index.html build/index.html
+        mv html/loading.gif build/loading.gif
         find build -type f ! \( -name 'Writer.wasm' -o -name 'Writer.js' -o -name 'Writer.worker.js' -o -name 'qtloader.js' -o -name 'index.html' -o -name 'loading.gif' \) -delete
 
 
